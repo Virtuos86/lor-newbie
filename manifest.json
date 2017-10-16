@@ -1,0 +1,36 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "newbie@l.or",
+      "strict_min_version": "57.0"
+    }
+  },
+
+  "description": "Highlighting newbie's nicknames on Linux.Org.Ru.",
+  "manifest_version": 2,
+  "name": "Highlighting of LOR-newbies",
+  "version": "0.1.3",
+  "homepage_url": "https://github.com/Virtuos86/lor-newbie",
+  "icons": {
+    "48": "icons/good-penguin-48.png",
+    "96": "icons/good-penguin-96.png"
+  },
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.linux.org.ru/*"],
+      "js": ["matcher.js"]
+    }
+  ],
+
+  "permissions": [
+    "https://www.linux.org.ru/",
+    "storage"
+  ]
+}
